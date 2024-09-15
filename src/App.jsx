@@ -1,40 +1,42 @@
-// App.js
 import React, { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import CreditScoreTracker from "./components/CreditScoreTracker";
 import Dashboard from "./pages/Dashboard";
 import Expenses from "./pages/Expenses";
 import FutureExpenses from "./pages/FutureExpenses";
 
-function App() {
-  const [currentPage, setCurrentPage] = useState("dashboard");
+const App = () => {
+  const [currentPage, setCurrentPage] = useState('dashboard');
 
   const renderPage = () => {
     switch (currentPage) {
-      case "dashboard":
+      case 'dashboard':
         return <Dashboard />;
-      case "expenses":
+      case 'expenses':
         return <Expenses />;
-      case "futureExpenses":
+      case 'futureExpenses':
         return <FutureExpenses />;
+      case 'creditScore':
+        return <CreditScoreTracker />;
       default:
         return <Dashboard />;
     }
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="App">
       <Navbar />
-      <div className="flex flex-1">
+      <div className="flex">
         <Sidebar setCurrentPage={setCurrentPage} />
-        <main className="flex-1 p-8 bg-gray-100">
+        <main className="flex-grow p-4">
           {renderPage()}
         </main>
       </div>
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

@@ -3,11 +3,11 @@ import React from "react";
 
 // Example data for personal expenses
 const expensesData = [
-  { id: 1, amount: 5000, time: "2024-09-01", category: "Clothing" },
-  { id: 2, amount: 4500, time: "2024-09-02", category: "Movie" },
-  { id: 3, amount: 7000, time: "2024-09-03", category: "Car Booking" },
-  { id: 4, amount: 6000, time: "2024-09-04", category: "Museum" },
-  { id: 5, amount: 5500, time: "2024-09-05", category: "Clothing" },
+  { id: 1, amount: 5000, time: "2024-09-01", category: "Clothing", paymentMethod: "Google Pay" },
+  { id: 2, amount: 4500, time: "2024-09-02", category: "Movie", paymentMethod: "Paytm" },
+  { id: 3, amount: 7000, time: "2024-09-03", category: "Car Booking", paymentMethod: "PhonePe" },
+  { id: 4, amount: 6000, time: "2024-09-04", category: "Museum", paymentMethod: "BHIM UPI" },
+  { id: 5, amount: 5500, time: "2024-09-05", category: "Clothing", paymentMethod: "BharatPe" },
 ];
 
 // Calculate total and category-wise spending
@@ -44,6 +44,7 @@ const Expenses = () => {
               <th className="p-3">Amount</th>
               <th className="p-3">Date</th>
               <th className="p-3">Category</th>
+              <th className="p-3">Payment Method</th>
               <th className="p-3">Description</th>
             </tr>
           </thead>
@@ -53,6 +54,7 @@ const Expenses = () => {
                 <td className="p-3">₹{expense.amount}</td>
                 <td className="p-3">{expense.time}</td>
                 <td className="p-3">{expense.category}</td>
+                <td className="p-3">{expense.paymentMethod}</td>
                 <td className="p-3">Description for {expense.category}</td>
               </tr>
             ))}

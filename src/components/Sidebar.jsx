@@ -22,7 +22,7 @@ const Sidebar = ({ setCurrentPage }) => {
         </li>
         <li className="hover:bg-gray-700 p-3 rounded cursor-pointer" onClick={() => setCurrentPage('creditScore')}>
           <CreditCardIcon className="inline-block w-5 h-5 mr-2" />
-          Credit Score Tracker
+          CIBIL Score Tracker
         </li>
       </ul>
     </div>
